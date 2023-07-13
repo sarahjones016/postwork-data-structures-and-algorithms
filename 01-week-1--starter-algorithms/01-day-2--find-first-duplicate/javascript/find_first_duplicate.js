@@ -2,13 +2,17 @@ function findFirstDuplicate(arr) {
   // create an empty dictionary
   emptyDict = {}
 
-  for (num of arr) {
-    if (num in emptyDict) {
-      emptyDict[num] += 1
-      return num
-    } else {
-      emptyDict[num] = 1
-    }
+  if (arr.length !== 0) {
+    for (num of arr) {
+        if (num in emptyDict) {
+          emptyDict[num] += 1
+          return num
+        } else {
+          emptyDict[num] = 1
+        }
+      }
+  } else {
+    return -1
   }
   
   for (pair in emptyDict) {
