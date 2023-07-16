@@ -26,6 +26,17 @@ function findShortestString(arr) {
       }
     }
 
+    // SOLUTION CODE
+    // let shortest = arr[0];
+
+    // for (string of arr) {
+    //   if (string.length < shortest.length) {
+    //     shortest = string;
+    //   }
+    // }
+
+    // return shortest;
+
 }
 
 if (require.main === module) {
@@ -58,7 +69,7 @@ if (require.main === module) {
   //   execute the method using a larger input, e.g. 100 items if input is an Array
 
   for (i = 0; i < 1000; i++) {
-    // findShortestString(["sarah", "emma", "roux"])
+    findShortestString(["sarah", "emma", "roux"])
     findShortestString(longInput)
   }
 
