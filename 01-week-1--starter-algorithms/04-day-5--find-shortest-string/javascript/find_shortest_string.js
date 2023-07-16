@@ -44,6 +44,28 @@ if (require.main === module) {
   console.log("=>", findShortestString(['flower', 'juniper', 'lily', 'dadelion']));
 
   // BENCHMARK HERE
+  const longInput = [];
+
+  for (let i = 0; i < 100; ++i) {
+    longInput.push(Math.random());
+  }
+
+  // store the current time in a variable called start time
+  startTime = Date.now()
+
+  // loop 1000 times:
+  //   execute the method using a small input, e.g. three items if input is an Array
+  //   execute the method using a larger input, e.g. 100 items if input is an Array
+
+  for (i = 0; i < 1000; i++) {
+    // findShortestString(["sarah", "emma", "roux"])
+    findShortestString(longInput)
+  }
+
+  // average runtime = (current time - start time) / 2000
+  averageRuntime = (Date.now() - startTime) / 2000
+
+  console.log(averageRuntime)
 }
 
 module.exports = findShortestString;
