@@ -1,14 +1,35 @@
 function findShortestStringRecursive(arr) {
-  // if there is only 1 string in the array, return that string
+
+  // base case: check if length of array is 1, if yes, return string
+  // if length > 1, extract first string from array
+  // call function again with array minus first string
+  // compare length of first string with result of recursion
+  // if first string < rest of array, return first string
+  // otherwise return shortest string found from recursive call
+
   if (arr.length === 1) {
     return arr[0]
   }
 
-  // otherwise, look at the strings in the array besides the first one. 
   const result = findShortestStringRecursive(arr.slice(1));
+
+  // arr[0] = 'cat'
   // result = findShortestStringRecursive(['hi', 'dog', 'an'])
 
-  // return arr[0].length <= result.length ? arr[0] : result;
+  // arr[0] = 'hi'
+  // result = findShortestStringRecursive(['dog', 'an'])
+
+  // arr[0] = 'dog'
+  // result = findShortestStringRecursive(['an'])
+
+  // an < dog (move forward with an)
+  // hi = an (move forward with hi)
+  // hi < cat (return hi)
+
+
+  // https://medium.com/@bwithchewoo/learning-algorithms-with-ruby-day-2-95eb60f292cd
+
+
   if (arr[0].length <= result.length) {
     return arr[0]
   } else {
