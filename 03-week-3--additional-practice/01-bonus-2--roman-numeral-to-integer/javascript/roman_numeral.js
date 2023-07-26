@@ -23,34 +23,23 @@ function romanNumeral(string) {
       
       for (object of romanSymbols) {
         if (string[i] === object.symbol) {
-          // console.log(object.value)
           arrNums.push(object.value)
         }
       }
-      
     }
   }
 
+  let max = Math.max(...arrNums)
   let total = Math.max(...arrNums)
 
   for (let i = 0; i < arrNums.length; i++) {
-     if (i < arrNums.indexOf(total)) {
+     if (i < arrNums.indexOf(max)) {
        total -= arrNums[i]
-     } else if (i > arrNums.indexOf(total)) {
-       total += arrNums[i]
-     } else {
-      total += 0
+     } else if (i > arrNums.indexOf(max)) {
+        total += arrNums[i]
      }
-     
   }
-
-console.log(arrNums)
 return total 
-
-  // set variables for the Roman symbols (1, 5, 10, 50, 100, 500, 1000)
-  // if length of string is 1, return the value of said variable
-  // if length of string is greater than 1, we want to identify the Roman symbols largest to smallest (though their location in the string DOES matter)
-  // 
 }
 
 if (require.main === module) {
