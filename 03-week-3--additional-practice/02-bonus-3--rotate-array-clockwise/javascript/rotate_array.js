@@ -1,5 +1,23 @@
 function rotateArray(arr, k) {
-  // type your code here
+
+let removed = []
+
+for (n of arr) {
+  if ((arr.indexOf(n) + k) >= arr.length) {
+    // console.log(n)
+    removed = arr.splice(arr.indexOf(n), 1)
+    // console.log(removed)
+    
+    
+  }
+  // console.log(removed)
+  // console.log(arr)
+}
+  
+  // console.log(removed)
+    // return removed.concat(arr)
+
+
 }
 
 if (require.main === module) {
